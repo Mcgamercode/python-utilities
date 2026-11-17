@@ -24,6 +24,7 @@ it ships. The last few tools land as the series finishes.
 | [sqlite-query-helper](sqlite-query-helper/) | Query any SQLite DB, export to CSV/JSON, schema summary. Read-only by default. | TablePlus Basic ($99 one-time) |
 | [password-generator-audit](password-generator-audit/) | Random passwords and Diceware passphrases; score one password; audit a list for weak/common/reused entries. | 1Password Individual ($3.99/mo) |
 | [markdown-to-html](markdown-to-html/) | Convert any .md file to clean standalone HTML: TOC, tables, task lists, code blocks. Stdlib only. | Typora ($14.99 one-time) |
+| [ollama-model-manager](ollama-model-manager/) | Manage local Ollama models: list, status, pull, remove, show, copy. Stdlib only. | — (saves ~10–15 min per model audit) |
 | [terminal-dictionary](terminal-dictionary/) | A working dictionary in the terminal: definitions, roots, IPA, examples. | — |
 | [termux-cleaner](termux-cleaner/) | Find what's eating Termux storage; clear the safe caches. Dry-run default. | — |
 | [sql-injection-lab](sql-injection-lab/) | Local learning lab: vulnerable vs. safe logins against a real SQLite DB. Localhost only. | — |
