@@ -17,6 +17,7 @@ the running total.
 | 10 | 2026-11-13 | SQLite query helper (read-only default) | TablePlus Basic | $99 one-time | $0 |
 | 11 | 2026-11-14 | Password generator + strength audit | 1Password Individual | $3.99/mo ($47.88/yr; $2.99/mo first year) | $0 |
 | 12 | 2026-11-15 | Markdown-to-HTML converter | Typora | $14.99 one-time | $0 |
+| 13 | 2026-11-16 | Ollama model manager (list/pull/remove/show/status) | — no direct paid equivalent (Ollama local use is free; closest paid product Ollamac Pro $49 one-time is Mac-only GUI) | Time saved, ~10–15 min per model audit | $0 |
 
 ## Totals so far
 
