@@ -18,11 +18,12 @@ the running total.
 | 11 | 2026-11-14 | Password generator + strength audit | 1Password Individual | $3.99/mo ($47.88/yr; $2.99/mo first year) | $0 |
 | 12 | 2026-11-15 | Markdown-to-HTML converter | Typora | $14.99 one-time | $0 |
 | 13 | 2026-11-16 | Ollama model manager (list/pull/remove/show/status) | — no direct paid equivalent (Ollama local use is free; closest paid product Ollamac Pro $49 one-time is Mac-only GUI) | Time saved, ~10–15 min per model audit | $0 |
+| 14 | 2026-11-17 | Duplicate-photo finder (perceptual hash) | Duplicate Photo Cleaner | $39.95 (1-computer, 1-year license; list $49.95) | $0 |
 
 ## Totals so far
 
-- **One-time purchases avoided:** ~$336–351
+- **One-time purchases avoided:** ~$376–391
 - **Annual subscriptions avoided:** ~$571.62/yr
-- **Combined:** ~$336–351 one-time + ~$571.62/year
+- **Combined:** ~$376–391 one-time + ~$571.62/year
 
 *(Series runs Nov 5–18, 2026 — 14 nights. This log is updated each night.)*
