@@ -25,6 +25,7 @@ it ships. The last few tools land as the series finishes.
 | [password-generator-audit](password-generator-audit/) | Random passwords and Diceware passphrases; score one password; audit a list for weak/common/reused entries. | 1Password Individual ($3.99/mo) |
 | [markdown-to-html](markdown-to-html/) | Convert any .md file to clean standalone HTML: TOC, tables, task lists, code blocks. Stdlib only. | Typora ($14.99 one-time) |
 | [ollama-model-manager](ollama-model-manager/) | Manage local Ollama models: list, status, pull, remove, show, copy. Stdlib only. | — (saves ~10–15 min per model audit) |
+| [duplicate-photo-finder](duplicate-photo-finder/) | Finds near-duplicate photos by perceptual hash: resized, recompressed, brightened copies. Report-only default, move-to-review + restore. Needs Pillow. | Duplicate Photo Cleaner ($39.95) |
 | [terminal-dictionary](terminal-dictionary/) | A working dictionary in the terminal: definitions, roots, IPA, examples. | — |
 | [termux-cleaner](termux-cleaner/) | Find what's eating Termux storage; clear the safe caches. Dry-run default. | — |
 | [sql-injection-lab](sql-injection-lab/) | Local learning lab: vulnerable vs. safe logins against a real SQLite DB. Localhost only. | — |
@@ -40,7 +41,8 @@ python <tool>.py --help
 
 Every tool has its own README with exact commands for PowerShell and Termux.
 Python 3 is the only requirement for most tools; `json-yaml-tools` needs
-PyYAML (`pip install pyyaml`), and `sql-injection-lab` needs Flask for the
+PyYAML (`pip install pyyaml`), `duplicate-photo-finder` needs Pillow
+(`pip install pillow`), and `sql-injection-lab` needs Flask for the
 demo app. `ollama-redteam-harness` needs a local Ollama server with the
 models listed in its README.
 
@@ -48,7 +50,7 @@ models listed in its README.
 
 | | |
 | --- | --- |
-| One-time purchases avoided | ~$336–351 |
+| One-time purchases avoided | ~$376–391 |
 | Annual subscriptions avoided | ~$571.62/yr |
 
 Prices verified against the vendors' own pages when each tool was built
