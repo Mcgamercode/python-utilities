@@ -26,6 +26,7 @@ it ships. The last few tools land as the series finishes.
 | [markdown-to-html](markdown-to-html/) | Convert any .md file to clean standalone HTML: TOC, tables, task lists, code blocks. Stdlib only. | Typora ($14.99 one-time) |
 | [ollama-model-manager](ollama-model-manager/) | Manage local Ollama models: list, status, pull, remove, show, copy. Stdlib only. | — (saves ~10–15 min per model audit) |
 | [duplicate-photo-finder](duplicate-photo-finder/) | Finds near-duplicate photos by perceptual hash: resized, recompressed, brightened copies. Report-only default, move-to-review + restore. Needs Pillow. | Duplicate Photo Cleaner ($39.95) |
+| [term-lookup](term-lookup/) | Plain-English tech glossary + flashcards: 88 built-in terms, quiz mode, learn mode, Ollama hookup to write cards for new terms. Stdlib only. | Quizlet Plus ($35.99/yr) |
 | [terminal-dictionary](terminal-dictionary/) | A working dictionary in the terminal: definitions, roots, IPA, examples. | — |
 | [termux-cleaner](termux-cleaner/) | Find what's eating Termux storage; clear the safe caches. Dry-run default. | — |
 | [sql-injection-lab](sql-injection-lab/) | Local learning lab: vulnerable vs. safe logins against a real SQLite DB. Localhost only. | — |
@@ -51,7 +52,7 @@ models listed in its README.
 | | |
 | --- | --- |
 | One-time purchases avoided | ~$376–391 |
-| Annual subscriptions avoided | ~$571.62/yr |
+| Annual subscriptions avoided | ~$607.61/yr |
 
 Prices verified against the vendors' own pages when each tool was built
 (sources in each tool's README). See [SAVINGS_LOG.md](SAVINGS_LOG.md) for
