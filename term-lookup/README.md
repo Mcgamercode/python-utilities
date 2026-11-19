@@ -9,7 +9,15 @@ collection grows as you learn. No account, no internet, no cost, stdlib only.
 keeps tripping over jargon in code, logs, and tool output — and wants the words
 to become second nature instead of a wall.
 
-**Changelog:** v2.0.1 (Nov 19, 2026) — the quiz only asks about terms that
+**Changelog:** v2.0.2 (Nov 19, 2026) — lookups are now case-insensitive, so
+`api`, `json`, `csv`, `http`, `ssh` and every other acronym finally finds its
+card (before this, only lowercase words matched and every acronym came back
+"No built-in card"). Dotted forms work too: `.json` finds JSON, `A.P.I`
+finds API. Two new cards for exact strings that came up in real use: `.sh`
+(shell script file) and `0` (exit code 0 = success, and the first position
+when counting a list). Deck is now 90 terms.
+
+v2.0.1 (Nov 19, 2026) — the quiz only asks about terms that
 have a real card. Terms you looked up that have no card yet (a "stub") are
 skipped and counted, because their placeholder text gives the answer away.
 
@@ -103,7 +111,7 @@ apart from the built-ins and your own notes. Read them once with a sceptical
 eye: a small local model can get a detail wrong, and your own check is the
 real learning.
 
-## The deck — 88 built-in terms, 9 topics
+## The deck — 90 built-in terms, 9 topics
 
 | Topic | Terms | What's in it |
 |---|---|---|
