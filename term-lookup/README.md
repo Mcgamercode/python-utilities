@@ -9,6 +9,10 @@ collection grows as you learn. No account, no internet, no cost, stdlib only.
 keeps tripping over jargon in code, logs, and tool output — and wants the words
 to become second nature instead of a wall.
 
+**Changelog:** v2.0.1 (Nov 19, 2026) — the quiz only asks about terms that
+have a real card. Terms you looked up that have no card yet (a "stub") are
+skipped and counted, because their placeholder text gives the answer away.
+
 ## The learning loop (how the connections form)
 
 1. **Look a term up** — you get a card, not a dictionary definition.
