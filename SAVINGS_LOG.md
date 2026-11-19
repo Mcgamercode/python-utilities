@@ -19,11 +19,12 @@ the running total.
 | 12 | 2026-11-15 | Markdown-to-HTML converter | Typora | $14.99 one-time | $0 |
 | 13 | 2026-11-16 | Ollama model manager (list/pull/remove/show/status) | — no direct paid equivalent (Ollama local use is free; closest paid product Ollamac Pro $49 one-time is Mac-only GUI) | Time saved, ~10–15 min per model audit | $0 |
 | 14 | 2026-11-17 | Duplicate-photo finder (perceptual hash) | Duplicate Photo Cleaner | $39.95 (1-computer, 1-year license; list $49.95) | $0 |
+| 15 | 2026-11-18 | Term lookup — plain-English glossary + flashcards (Mike's own v1, upgraded) | Quizlet Plus | $35.99/yr ($7.99/mo month-to-month) | $0 |
 
 ## Totals so far
 
 - **One-time purchases avoided:** ~$376–391
-- **Annual subscriptions avoided:** ~$571.62/yr
-- **Combined:** ~$376–391 one-time + ~$571.62/year
+- **Annual subscriptions avoided:** ~$607.61/yr
+- **Combined:** ~$376–391 one-time + ~$607.61/year
 
-*(Series runs Nov 5–18, 2026 — 14 nights. This log is updated each night.)*
+*(Series runs Nov 5–18, 2026 — 14 nights. This log is updated each night. Tool #15 is outside the nightly series: Mike built the v1 himself on Nov 18 and asked for the upgrade — same repo, same $0.)*
