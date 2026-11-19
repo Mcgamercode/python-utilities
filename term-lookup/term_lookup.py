@@ -7,7 +7,7 @@ you look at is saved to a local JSON glossary, so your collection grows as
 you learn -- no account, no internet, no cost.
 
 New in this version (v2):
-  * 88 built-in terms across 9 topics, each linked to 2-3 related terms,
+  * 90 built-in terms across 9 topics, each linked to 2-3 related terms,
     so one lookup leads to the next idea (that is how the connections form).
   * Pretty boxed cards with colour (turn off with --no-color / --ascii).
   * --quiz: flashcards that drill your weakest terms first and remember
@@ -39,7 +39,7 @@ import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
 
-VERSION = "2.0.1"
+VERSION = "2.0.2"
 
 DEFAULT_GLOSSARY = Path.home() / ".local" / "share" / "term_lookup" / "glossary.json"
 DEFAULT_OLLAMA_HOST = "http://localhost:11434"
@@ -694,6 +694,31 @@ TERMS["API"] = {
     "related": ["request", "response", "JSON"],
 }
 
+# Two more cards for exact strings that came up in real use (Nov 19, 2026):
+# ".sh" is a file extension, not a word, and "0" is the exit code for success
+# (and the first position when counting list items).
+TERMS[".sh"] = {
+    "plain": "The file extension for a shell script -- a text file full of terminal commands that run top to bottom when you execute it.",
+    "example": "pentest-ops.sh: you run it and it runs every command inside, one after another, instead of you typing each one by hand.",
+    "watch_out": "A .sh file does nothing until it is executable (chmod +x) and you actually run it -- opening it just shows the text.",
+    "category": "files",
+    "related": ["shell", "extension", "cli"],
+}
+
+TERMS["0"] = {
+    "plain": "The number zero shows up in two places that matter: as the exit code that means 'it worked', and as the first position when counting items in a list.",
+    "example": "A command that finishes cleanly exits with 0; and in errors = ['timeout', 'denied'], errors[0] is 'timeout' -- counting starts at 0, not 1.",
+    "watch_out": "Don't mix the two up: exit code 0 means success, but list position 0 just means 'first' -- it says nothing about success or failure.",
+    "category": "terminal",
+    "related": ["exit code", "list"],
+}
+
+# Case-insensitive lookup table. TERMS keys use their natural casing
+# ("API", "JSON", "SQL injection"), but lookups arrive lowercased, so a
+# plain TERMS.get(lowercased) missed every acronym. This maps every key
+# to its lowercase form once, and build_entry consults it instead.
+_TERMS_BY_LOWER_KEY = {k.lower(): v for k, v in TERMS.items()}
+
 # ---------------------------------------------------------------------------
 # Colours + card rendering
 # ---------------------------------------------------------------------------
@@ -815,7 +840,15 @@ def build_entry(term: str, context: str | None, ollama: bool = False,
     source is one of: 'built-in', 'ollama', 'stub' (no card yet).
     """
     key = term.strip().lower()
-    base = TERMS.get(key)
+    base = _TERMS_BY_LOWER_KEY.get(key)
+    if base is None:
+        # Forgiving forms of the same term: ".json" is the JSON file
+        # extension, "A.P.I" is API typed with dots. Try each shape in
+        # turn and take the first one the deck actually has.
+        for candidate in (key.lstrip("."), key.replace(".", "")):
+            base = _TERMS_BY_LOWER_KEY.get(candidate)
+            if base:
+                break
     ctx = context.strip() if context else None
 
     if base:
