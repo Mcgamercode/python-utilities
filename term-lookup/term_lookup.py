@@ -39,7 +39,7 @@ import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
 
-VERSION = "2.0.0"
+VERSION = "2.0.1"
 
 DEFAULT_GLOSSARY = Path.home() / ".local" / "share" / "term_lookup" / "glossary.json"
 DEFAULT_OLLAMA_HOST = "http://localhost:11434"
@@ -992,6 +992,11 @@ def run_quiz(glossary: dict[str, dict], glossary_path: Path, paint: Paint,
              rounds: int = 5, ascii_only: bool = False) -> int:
     """Flashcards: show the plain meaning, guess the term. Weakest first."""
     known = all_known_terms(glossary)
+    # Stubs have no real card -- their "plain" text IS the answer ("No built-in
+    # card for 'X' yet..."), so quizzing them gives the answer away for free
+    # and inflates the score. Only real cards (built-in, custom, ollama) play.
+    skipped = sum(1 for item in known.values() if item.get("source") == "stub")
+    known = {k: v for k, v in known.items() if v.get("source") != "stub"}
     # Attach saved stats so ordering reflects real performance.
     for key, item in known.items():
         saved = glossary.get(key, {})
@@ -1010,6 +1015,9 @@ def run_quiz(glossary: dict[str, dict], glossary_path: Path, paint: Paint,
         return 0
 
     print(paint.bold(f"Quiz time -- {len(pool)} card(s). Weakest terms first."))
+    if skipped:
+        print(f"(Skipped {skipped} term(s) with no card yet -- fill them in with "
+              f"--add or --ollama and they will join the quiz.)")
     print("I show the plain meaning. You type the term. (Ctrl+C to stop early.)\n")
     correct = 0
     for i, item in enumerate(pool, 1):
